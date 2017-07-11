@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-row>
-      <el-col :span="24">
+      <el-col :span="24" class="ele-header-layout">
         <el-menu theme="dark" default-active="1" mode="horizontal" class="ele-no-border">
           <el-menu-item index="1">处理中心</el-menu-item>
           <el-submenu index="2">
@@ -15,7 +15,7 @@
       </el-col>
     </el-row>
     <el-row>
-      <el-col :span="6">
+      <el-col :xs="10" :sm="8" :md="6" :lg="4" class="ele-nav-bar-layout">
         <el-menu default-active="2" class="ele-no-border">
           <el-submenu index="1">
             <template slot="title"><i class="el-icon-message"></i>导航一</template>
@@ -36,24 +36,39 @@
           <el-menu-item index="3"><i class="el-icon-setting"></i>导航三</el-menu-item>
         </el-menu>
       </el-col>
-      <el-col :span="18">
-        <div class="grid-content bg-purple"></div>
+      <el-col :xs="14" :sm="16" :md="18" :lg="20" class="ele-content-layout">
+        <slot></slot>
       </el-col>
     </el-row>
   </div>
 </template>
 
-<style lang="scss">
-  .bg-purple {
-    background: #d3dce6;
-  }
-
-  .grid-content {
-    min-height: 36px;
-  }
-
+<style lang="scss" scoped>
   .ele-no-border {
     border-radius: 0;
+  }
+
+  .ele-nav-bar-layout {
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    overflow: auto;
+    background: rgb(238, 241, 246);
+  }
+
+  .ele-header-layout {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+  }
+
+  .ele-content-layout {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    border-left: 1px solid #dfe6ec;
   }
 </style>
 
@@ -63,8 +78,6 @@
       return {
       }
     },
-    methods: {
-    }
+    methods: {}
   }
 </script>
-
