@@ -8,7 +8,7 @@
 
 <script>
   import DashboardLayout from '@/components/dashboard-layout'
-  import MainNav from '@/components/main-nav'
+  import MainNav from '@/pages/main-nav'
 
   export default {
     components: {
