@@ -6,7 +6,7 @@
         <router-view name="sidebarNav"></router-view>
       </transition>
     </template>
-    <transition name="el-zoom-in-top" mode="out-in">
+    <transition name="el-fade-in" mode="out-in">
       <router-view></router-view>
     </transition>
   </ele-dashboard-layout>
