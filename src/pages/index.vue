@@ -1,8 +1,14 @@
 <template>
   <ele-dashboard-layout>
     <ele-main-nav slot="main-nav"></ele-main-nav>
-    <router-view slot="sidebar-nav" name="sidebarNav"></router-view>
-    <router-view></router-view>
+    <template slot="sidebar-nav">
+      <transition name="el-fade-in" mode="out-in">
+        <router-view name="sidebarNav"></router-view>
+      </transition>
+    </template>
+    <transition name="el-zoom-in-top" mode="out-in">
+      <router-view></router-view>
+    </transition>
   </ele-dashboard-layout>
 </template>
 

@@ -24,7 +24,6 @@
   export default {
     methods: {
       handleSelect (key, keyPath) {
-        console.log(key)
         switch (key) {
           case '1-1':
             this.$router.push({ name: 'home-index' })
