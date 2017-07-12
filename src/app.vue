@@ -1,5 +1,7 @@
 <template>
   <ele-dashboard-layout>
+    <ele-main-nav slot="main-nav"></ele-main-nav>
+    <ele-sidebar-nav slot="sidebar-nav"></ele-sidebar-nav>
     <div class="ele-content">
       <el-breadcrumb separator="/" style="margin-bottom: 20px">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
@@ -78,25 +80,22 @@
 
 <style lang="scss" scoped>
   .ele-content {
-    padding: 22px;
+    padding: 20px;
     background: #fff;
-  }
-
-  .ele-panel {
-    border: 1px solid #dfe6ec;
-    padding: 22px;
-    border-radius: 2px;
-    background: #eef1f6;
   }
 </style>
 
 <script>
   import DashboardLayout from '@/components/dashboard-layout'
+  import SidebarNav from '@/components/sidebar-nav'
+  import MainNav from '@/components/main-nav'
 
   export default {
     name: 'app',
     components: {
-      'ele-dashboard-layout': DashboardLayout
+      'ele-dashboard-layout': DashboardLayout,
+      'ele-sidebar-nav': SidebarNav,
+      'ele-main-nav': MainNav
     },
     data () {
       return {

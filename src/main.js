@@ -4,6 +4,7 @@ import Vue from 'vue'
 import 'normalize.css'
 import ElementUI from 'element-ui'
 import './styles/theme/index.css'
+import './styles/ext/ext.scss'
 import App from './app'
 import router from './router'
 
