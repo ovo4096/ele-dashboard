@@ -1,6 +1,6 @@
 <template>
-  <div class="full-window">
-    <div class="middle-window">
+  <div class="full-screen">
+    <div class="center-window">
       <el-row type="flex" justify="center">
         <el-col :span="6">
           <div class="ele-content">
@@ -30,15 +30,17 @@
 </template>
 
 <style lang="scss" scoped>
-  .full-window {
+  .full-screen {
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-
-    .middle-window {
-
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    .center-window {
+      flex-grow: 1;
     }
   }
 </style>
