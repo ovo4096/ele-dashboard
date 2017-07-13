@@ -3,25 +3,23 @@
     <div class="center-window">
       <el-row type="flex" justify="center">
         <el-col :span="6">
-          <div class="ele-content">
-            <div class="ele-panel">
-              <h1>DASHBOARD</h1>
-              <el-form label-width="80px">
-                <el-form-item label="帐号">
-                  <el-input></el-input>
-                </el-form-item>
-                <el-form-item label="密码">
-                  <el-input type="password"></el-input>
-                </el-form-item>
-                <el-form-item>
-                  <el-checkbox>在这台电脑记住我</el-checkbox>
-                </el-form-item>
-                <el-form-item style="margin-bottom: 0">
-                  <el-button type="primary">登录</el-button>
-                  <el-button>重置</el-button>
-                </el-form-item>
-              </el-form>
-            </div>
+          <div class="ele-panel">
+            <h1>DASHBOARD</h1>
+            <el-form label-width="80px">
+              <el-form-item label="帐号">
+                <el-input></el-input>
+              </el-form-item>
+              <el-form-item label="密码">
+                <el-input type="password"></el-input>
+              </el-form-item>
+              <el-form-item>
+                <el-checkbox>在这台电脑记住我</el-checkbox>
+              </el-form-item>
+              <el-form-item style="margin-bottom: 0">
+                <el-button type="primary" @click="login">登录</el-button>
+                <el-button>重置</el-button>
+              </el-form-item>
+            </el-form>
           </div>
         </el-col>
       </el-row>
@@ -37,10 +35,20 @@
     left: 0;
     right: 0;
     display: flex;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
     .center-window {
       flex-grow: 1;
     }
   }
 </style>
+
+<script>
+  export default {
+    methods: {
+      login () {
+        this.$router.push({ name: 'home-welcome' })
+      }
+    }
+  }
+</script>

@@ -26,7 +26,7 @@
       handleSelect (key, keyPath) {
         switch (key) {
           case '1-1':
-            this.$router.push({ name: 'home-index' })
+            this.$router.push({ name: 'home-welcome' })
             break
           case '1-2':
             this.$router.push({ name: 'home-demo' })

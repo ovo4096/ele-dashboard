@@ -2,7 +2,7 @@
   <div>
     <el-row>
       <el-col :span="24" class="ele-header-layout">
-        <slot name="main-nav"></slot>
+        <slot name="top-nav"></slot>
       </el-col>
     </el-row>
     <el-row>

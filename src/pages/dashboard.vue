@@ -1,6 +1,6 @@
 <template>
   <ele-dashboard-layout>
-    <ele-main-nav slot="main-nav"></ele-main-nav>
+    <ele-dashboard-top-nav slot="top-nav"></ele-dashboard-top-nav>
     <template slot="sidebar-nav">
       <transition name="el-fade-in" mode="out-in">
         <router-view name="sidebarNav"></router-view>
@@ -14,12 +14,12 @@
 
 <script>
   import DashboardLayout from '@/components/dashboard-layout'
-  import MainNav from '@/pages/main-nav'
+  import DashboardTopNav from '@/components/dashboard-top-nav'
 
   export default {
     components: {
       'ele-dashboard-layout': DashboardLayout,
-      'ele-main-nav': MainNav
+      'ele-dashboard-top-nav': DashboardTopNav
     }
   }
 </script>

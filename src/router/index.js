@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/pages/index'
+
+import Dashboard from '@/pages/dashboard'
 import Login from '@/pages/login'
 
-import HomeIndex from '@/pages/home/index'
-import HomeSidebarNav from '@/pages/home/sidebar-nav'
+import DashboardContent from '@/components/dashboard-content'
+import DashboardSidebarNav from '@/components/dashboard-sidebar-nav'
+
 import HomeWelcome from '@/pages/home/welcome'
 import HomeDemo from '@/pages/home/demo'
 
-import SettingsIndex from '@/pages/settings/index'
-import SettingsSidebarNav from '@/pages/settings/sidebar-nav'
 import SettingsDemo from '@/pages/settings/demo'
 
 Vue.use(Router)
@@ -19,25 +19,25 @@ export default new Router({
   routes: [
     {
       path: '',
-      component: Index,
+      component: Dashboard,
       children: [
         {
-          path: 'home',
+          path: '',
           alias: '',
           components: {
-            default: HomeIndex,
-            sidebarNav: HomeSidebarNav
+            default: DashboardContent,
+            sidebarNav: DashboardSidebarNav
           },
           children: [
             {
-              name: 'home-index',
               path: 'welcome',
               alias: '',
+              name: 'home-welcome',
               component: HomeWelcome
             },
             {
-              name: 'home-demo',
               path: 'demo',
+              name: 'home-demo',
               component: HomeDemo
             }
           ]
@@ -45,14 +45,14 @@ export default new Router({
         {
           path: 'settings',
           components: {
-            default: SettingsIndex,
-            sidebarNav: SettingsSidebarNav
+            default: DashboardContent,
+            sidebarNav: DashboardSidebarNav
           },
           children: [
             {
-              name: 'settings-index',
               path: 'demo',
               alias: '',
+              name: 'settings-demo',
               component: SettingsDemo
             }
           ]
