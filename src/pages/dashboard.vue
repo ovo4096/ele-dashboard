@@ -1,6 +1,8 @@
 <template>
-  <ele-dashboard-layout>
-    <ele-dashboard-top-nav slot="top-nav"></ele-dashboard-top-nav>
+  <ele-layout>
+    <ele-top-nav slot="top-nav">
+      <ele-user-menu></ele-user-menu>
+    </ele-top-nav>
     <template slot="sidebar-nav">
       <transition name="el-fade-in" mode="out-in">
         <router-view name="sidebarNav"></router-view>
@@ -9,17 +11,19 @@
     <transition name="el-fade-in" mode="out-in">
       <router-view></router-view>
     </transition>
-  </ele-dashboard-layout>
+  </ele-layout>
 </template>
 
 <script>
-  import DashboardLayout from '@/components/dashboard-layout'
-  import DashboardTopNav from '@/components/dashboard-top-nav'
+  import Layout from '@/components/layout'
+  import TopNav from '@/components/top-nav'
+  import UserMenu from '@/components/user-menu'
 
   export default {
     components: {
-      'ele-dashboard-layout': DashboardLayout,
-      'ele-dashboard-top-nav': DashboardTopNav
+      'ele-layout': Layout,
+      'ele-top-nav': TopNav,
+      'ele-user-menu': UserMenu
     }
   }
 </script>
