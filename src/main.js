@@ -7,6 +7,7 @@ import './styles/theme/index.css'
 import './styles/ext/ext.scss'
 import App from './app'
 import router from './router'
+import store from './store'
 
 Vue.use(ElementUI)
 Vue.config.productionTip = false
@@ -14,7 +15,7 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
-  template: '<app/>',
-  components: { App }
+  render: h => h(App)
 })
