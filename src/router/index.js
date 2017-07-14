@@ -18,10 +18,10 @@ import SettingsDemo2 from '@/pages/settings/demo2'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history',
   routes: [
     {
-      path: '/ele-dashboard',
+      path: '/admin',
       component: Dashboard,
       children: [
         {
@@ -78,7 +78,7 @@ export default new Router({
       ]
     },
     {
-      path: '/ele-dashboard/login',
+      path: '/admin/login',
       name: 'login',
       component: Login
     }
