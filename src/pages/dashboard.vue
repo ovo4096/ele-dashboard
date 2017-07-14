@@ -19,7 +19,7 @@
   import TopNav from '@/components/top-nav'
   import UserMenu from '@/components/user-menu'
 
-  import navMap from '@/configs/navMap'
+  import navMap from '@/config/navMap'
 
   export default {
     components: {

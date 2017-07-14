@@ -1,16 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import navMap from '@/config/navMap'
+
+import Content from '@/components/content'
+import SidebarNav from '@/components/sidebar-nav'
+
 import Dashboard from '@/pages/dashboard'
 import Login from '@/pages/login'
 
-import Content from '@/components/content'
-
-import HomeSidebarNav from '@/pages/home/sidebar-nav'
 import HomeWelcome from '@/pages/home/welcome'
 import HomeDemo from '@/pages/home/demo'
 
-import SettingsSidebarNav from '@/pages/settings/sidebar-nav'
 import SettingsDemo from '@/pages/settings/demo'
 
 Vue.use(Router)
@@ -27,7 +28,12 @@ export default new Router({
           alias: '',
           components: {
             default: Content,
-            sidebarNav: HomeSidebarNav
+            sidebarNav: SidebarNav
+          },
+          props: {
+            sidebarNav: {
+              navMap: navMap[0].children
+            }
           },
           children: [
             {
@@ -47,7 +53,12 @@ export default new Router({
           path: 'settings',
           components: {
             default: Content,
-            sidebarNav: SettingsSidebarNav
+            sidebarNav: SidebarNav
+          },
+          props: {
+            sidebarNav: {
+              navMap: navMap[1].children
+            }
           },
           children: [
             {
