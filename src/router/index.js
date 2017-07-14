@@ -21,7 +21,7 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '',
+      path: '/ele-dashboard',
       component: Dashboard,
       children: [
         {
@@ -33,8 +33,7 @@ export default new Router({
           },
           props: {
             sidebarNav: {
-              navMap: navMap[0].children,
-              isKey: false
+              navMap: navMap[0].children
             }
           },
           children: [
@@ -59,8 +58,7 @@ export default new Router({
           },
           props: {
             sidebarNav: {
-              navMap: navMap[1].children,
-              isKey: false
+              navMap: navMap[1].children
             }
           },
           children: [
@@ -80,7 +78,7 @@ export default new Router({
       ]
     },
     {
-      path: '/login',
+      path: '/ele-dashboard/login',
       name: 'login',
       component: Login
     }
