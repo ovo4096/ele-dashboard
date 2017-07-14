@@ -1,11 +1,6 @@
 <template>
   <div class="ele-content">
-    <el-breadcrumb separator="/" style="margin-bottom: 20px">
-      <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item>活动管理</el-breadcrumb-item>
-      <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-      <el-breadcrumb-item>活动详情</el-breadcrumb-item>
-    </el-breadcrumb>
+    <ele-breadcrumb></ele-breadcrumb>
     <div class="ele-panel">
       <el-form ref="form" :model="form" label-width="80px">
         <el-form-item label="活动名称">
@@ -75,7 +70,12 @@
 </template>
 
 <script>
+  import Breadcrumb from '@/components/breadcrumb'
+
   export default {
+    components: {
+      'ele-breadcrumb': Breadcrumb
+    },
     data () {
       return {
         form: {
@@ -210,8 +210,6 @@
           address: '上海市普陀区金沙江路 1516 弄'
         }]
       }
-    },
-    created () {
     },
     methods: {
       onSubmit () {

@@ -33,7 +33,8 @@ export default new Router({
           },
           props: {
             sidebarNav: {
-              navMap: navMap[0].children
+              navMap: navMap[0].children,
+              isKey: false
             }
           },
           children: [
@@ -58,7 +59,8 @@ export default new Router({
           },
           props: {
             sidebarNav: {
-              navMap: navMap[1].children
+              navMap: navMap[1].children,
+              isKey: false
             }
           },
           children: [

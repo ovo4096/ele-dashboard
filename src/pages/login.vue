@@ -47,6 +47,7 @@
   export default {
     methods: {
       login () {
+        this.$store.dispatch('authentication/accessToken', '123')
         this.$router.push({ name: 'home-welcome' })
       }
     }

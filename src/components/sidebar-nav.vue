@@ -1,9 +1,11 @@
 <template>
-  <el-menu :default-active="active" class="ele-rounded-0" @select="handleSelect">
-    <template v-for="(nav, index) in navMap">
-      <el-menu-item :index="index.toString()"><i v-if="nav.icon" :class="nav.icon"></i>{{ nav.text }}</el-menu-item>
-    </template>
-  </el-menu>
+  <transition name="el-fade-in" mode="out-in">
+    <el-menu :default-active="active" class="ele-rounded-0" @select="handleSelect">
+      <template v-for="(nav, index) in navMap">
+        <el-menu-item :index="index.toString()"><i v-if="nav.icon" :class="nav.icon"></i>{{ nav.text }}</el-menu-item>
+      </template>
+    </el-menu>
+  </transition>
 </template>
 
 <script>
