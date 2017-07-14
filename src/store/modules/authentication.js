@@ -1,5 +1,9 @@
+import Cookies from 'js-cookie'
+
+const accessToken = Cookies.get('accessToken') === undefined ? '' : Cookies.get('accessToken')
+
 const state = {
-  accessToken: ''
+  accessToken
 }
 
 const getters = {
@@ -9,14 +13,15 @@ const getters = {
 }
 
 const mutations = {
-  accessToken (state, value) {
+  accessToken (state, {value, remember = false}) {
     state.accessToken = value
+    Cookies.set('accessToken', value, {expires: remember ? 7 : 0})
   }
 }
 
 const actions = {
-  accessToken ({commit}, value) {
-    commit('accessToken', value)
+  accessToken ({commit}, {value, remember = false}) {
+    commit('accessToken', {value, remember})
   }
 }
 

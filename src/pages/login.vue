@@ -81,7 +81,7 @@
       submitForm (formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            this.$store.dispatch('authentication/accessToken', '123')
+            this.$store.dispatch('authentication/accessToken', {value: '123', remember: this.loginForm.remember})
             this.$router.push({name: 'home-welcome'})
           } else {
             return false

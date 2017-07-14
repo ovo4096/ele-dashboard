@@ -14,7 +14,7 @@
       handleSelect (index) {
         switch (index) {
           case 'user-logout': {
-            this.$store.dispatch('authentication/accessToken', '')
+            this.$store.dispatch('authentication/accessToken', {value: ''})
             this.$router.push({name: 'login'})
             break
           }
