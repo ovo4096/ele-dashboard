@@ -13,6 +13,7 @@ import HomeWelcome from '@/pages/home/welcome'
 import HomeDemo from '@/pages/home/demo'
 
 import SettingsDemo from '@/pages/settings/demo'
+import SettingsDemo2 from '@/pages/settings/demo2'
 
 Vue.use(Router)
 
@@ -66,6 +67,11 @@ export default new Router({
               alias: '',
               name: 'settings-demo',
               component: SettingsDemo
+            },
+            {
+              path: 'demo2',
+              name: 'settings-demo2',
+              component: SettingsDemo2
             }
           ]
         }

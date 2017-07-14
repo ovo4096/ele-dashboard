@@ -212,7 +212,6 @@
       }
     },
     created () {
-      this.$store.dispatch('breadcrumb/current', 'test')
     },
     methods: {
       onSubmit () {

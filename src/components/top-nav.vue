@@ -1,7 +1,7 @@
 <template>
   <el-menu theme="dark" :default-active="active" mode="horizontal" class="ele-rounded-0" @select="handleSelect">
     <template v-for="(nav, index) in navMap">
-      <el-menu-item :index="index.toString()">{{ nav.text }}</el-menu-item>
+      <el-menu-item :index="index.toString()"><i v-if="nav.icon" :class="nav.icon"></i>{{ nav.text }}</el-menu-item>
     </template>
     <slot></slot>
   </el-menu>
@@ -15,16 +15,12 @@
         if (this.navMap[index] !== undefined) {
           this.$router.push(this.navMap[index].location)
         }
-        this.active = index
       }
     },
     computed: {
       active: {
         get () {
           return this.$store.getters['breadcrumb/topNavActive']
-        },
-        set (value) {
-          this.$store.dispatch('breadcrumb/topNavActive', value)
         }
       }
     }
