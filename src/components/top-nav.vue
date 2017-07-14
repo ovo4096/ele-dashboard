@@ -12,8 +12,16 @@
     props: ['navMap'],
     methods: {
       handleSelect (index) {
-        if (this.navMap[index] !== undefined) {
-          this.$router.push(this.navMap[index].location)
+        switch (index) {
+          case 'user-logout': {
+            this.$store.dispatch('authentication/accessToken', '')
+            this.$router.push({name: 'login'})
+            break
+          }
+          default:
+            if (this.navMap[index] !== undefined) {
+              this.$router.push(this.navMap[index].location)
+            }
         }
       }
     },

@@ -19,6 +19,11 @@ router.beforeEach((to, from, next) => {
     return
   }
 
+  if (to.name === 'login' && store.getters['authentication/accessToken'] !== '') {
+    next(false)
+    return
+  }
+
   for (let i = 0; i < navMap.length; i++) {
     if (to.name === navMap[i].location.name) {
       store.dispatch('breadcrumb/topNavActive', i.toString())
