@@ -3,7 +3,7 @@ export default {
   computed: {
     active: {
       get () {
-        return this.$store.getters['breadcrumb/sidebarNavActive']
+        return this.$store.getters['dashboard/sidebarNavActive']
       }
     }
   },

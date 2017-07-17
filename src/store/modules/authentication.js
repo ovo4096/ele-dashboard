@@ -22,6 +22,9 @@ const mutations = {
 const actions = {
   accessToken ({commit}, {value, remember = false}) {
     commit('accessToken', {value, remember})
+  },
+  clearAccessToken ({commit}) {
+    commit('accessToken', {value: ''})
   }
 }
 

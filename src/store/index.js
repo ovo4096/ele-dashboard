@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import breadcrumb from './modules/breadcrumb'
+import dashboard from './modules/dashboard'
 import authentication from './modules/authentication'
 
 Vue.use(Vuex)
@@ -10,7 +10,7 @@ const debug = process.env.NODE_ENV !== 'production'
 
 export default new Vuex.Store({
   modules: {
-    breadcrumb,
+    dashboard,
     authentication
   },
   strict: debug

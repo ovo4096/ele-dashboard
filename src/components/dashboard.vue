@@ -82,7 +82,7 @@
       handleTopNavSelect (index) {
         switch (index) {
           case 'user-menu-logout': {
-            this.$store.dispatch('authentication/accessToken', {value: ''})
+            this.$store.dispatch('authentication/clearAccessToken')
             this.$router.push({name: 'login'})
             break
           }
@@ -95,7 +95,7 @@
     },
     computed: {
       topNavActive () {
-        return this.$store.getters['breadcrumb/topNavActive']
+        return this.$store.getters['dashboard/topNavActive']
       }
     }
   }
