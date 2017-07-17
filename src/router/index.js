@@ -12,7 +12,7 @@ import HomeDashboardSidebarNav from '@/pages/home/_dashboard-sidebar-nav'
 import HomeWelcome from '@/pages/home/welcome'
 import HomeDemo from '@/pages/home/demo'
 
-import SettingsDashboardSidebarNav from '@/pages/settings/_dashboard-sidebar-nav'
+// import SettingsDashboardSidebarNav from '@/pages/settings/_dashboard-sidebar-nav'
 import SettingsDemo from '@/pages/settings/demo'
 import SettingsDemo2 from '@/pages/settings/demo2'
 
@@ -55,7 +55,7 @@ export default new Router({
           path: 'settings',
           components: {
             default: DashboardContent,
-            sidebarNav: SettingsDashboardSidebarNav
+            sidebarNav: HomeDashboardSidebarNav
           },
           props: {
             sidebarNav: {

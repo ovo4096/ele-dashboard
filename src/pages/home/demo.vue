@@ -1,6 +1,6 @@
 <template>
   <div class="ele-content">
-    <ele-breadcrumb></ele-breadcrumb>
+    <ele-dashboard-breadcrumb></ele-dashboard-breadcrumb>
     <div class="ele-panel">
       <el-form ref="form" :model="form" label-width="80px">
         <el-form-item label="活动名称">
@@ -70,11 +70,11 @@
 </template>
 
 <script>
-  import Breadcrumb from '@/components/breadcrumb'
+  import DashboardBreadcrumb from '@/components/dashboard-breadcrumb'
 
   export default {
     components: {
-      'ele-breadcrumb': Breadcrumb
+      'ele-dashboard-breadcrumb': DashboardBreadcrumb
     },
     data () {
       return {
