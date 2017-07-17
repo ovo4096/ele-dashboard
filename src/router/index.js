@@ -3,15 +3,16 @@ import Router from 'vue-router'
 
 import navMap from '@/config/navMap'
 
-import Content from '@/components/content'
-import SidebarNav from '@/components/sidebar-nav'
+import DashboardContent from '@/components/dashboard-content'
 
 import Dashboard from '@/pages/dashboard'
 import Login from '@/pages/login'
 
+import HomeDashboardSidebarNav from '@/pages/home/_dashboard-sidebar-nav'
 import HomeWelcome from '@/pages/home/welcome'
 import HomeDemo from '@/pages/home/demo'
 
+import SettingsDashboardSidebarNav from '@/pages/settings/_dashboard-sidebar-nav'
 import SettingsDemo from '@/pages/settings/demo'
 import SettingsDemo2 from '@/pages/settings/demo2'
 
@@ -28,8 +29,8 @@ export default new Router({
           path: '',
           alias: '',
           components: {
-            default: Content,
-            sidebarNav: SidebarNav
+            default: DashboardContent,
+            sidebarNav: HomeDashboardSidebarNav
           },
           props: {
             sidebarNav: {
@@ -53,8 +54,8 @@ export default new Router({
         {
           path: 'settings',
           components: {
-            default: Content,
-            sidebarNav: SidebarNav
+            default: DashboardContent,
+            sidebarNav: SettingsDashboardSidebarNav
           },
           props: {
             sidebarNav: {

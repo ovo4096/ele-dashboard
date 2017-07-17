@@ -2,7 +2,7 @@
   <div class="full-screen">
     <div class="center-window">
       <el-row type="flex" justify="center">
-        <el-col :xs="20" :sm="12" :md="6" :lg="6">
+        <el-col :xs="20" :sm="16" :md="12" :lg="8">
           <div class="ele-panel">
             <h1>DASHBOARD</h1>
             <el-form :model="loginForm" :rules="loginFormRules" ref="loginForm">

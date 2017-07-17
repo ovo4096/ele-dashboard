@@ -1,36 +1,26 @@
 <template>
-  <ele-layout>
-    <ele-top-nav slot="top-nav" :nav-map="navMap">
-      <ele-user-menu></ele-user-menu>
-    </ele-top-nav>
-    <template slot="sidebar-nav">
+  <ele-dashboard :nav-map="navMap">
+    <template slot="sidebarNav">
       <transition name="el-fade-in" mode="out-in">
         <router-view name="sidebarNav"></router-view>
       </transition>
     </template>
-    <transition name="el-fade-in" mode="out-in">
-      <router-view></router-view>
-    </transition>
-  </ele-layout>
+    <router-view></router-view>
+  </ele-dashboard>
 </template>
 
 <script>
-  import Layout from '@/components/layout'
-  import TopNav from '@/components/top-nav'
-  import UserMenu from '@/components/user-menu'
-
+  import Dashboard from '@/components/dashboard'
   import navMap from '@/config/navMap'
 
   export default {
-    components: {
-      'ele-layout': Layout,
-      'ele-top-nav': TopNav,
-      'ele-user-menu': UserMenu
-    },
     data () {
       return {
         navMap
       }
+    },
+    components: {
+      'ele-dashboard': Dashboard
     }
   }
 </script>
